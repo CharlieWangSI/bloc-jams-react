@@ -10,6 +10,7 @@ class App extends Component {
         { description: 'Walk the cat', isCompleted: true },
         { description: 'Throw the dishes away', isCompleted: false },
         { description: 'Buy new dishes', isCompleted: false }
+<<<<<<< HEAD
       ],
         newTodoDescription: ''
     };
@@ -33,12 +34,19 @@ class App extends Component {
     this.setState({ todos: todos });
   }
 
+=======
+      ]
+    };
+  }
+
+>>>>>>> checkpoint-8-propsnstate
 
   render() {
     return (
       <div className="App">
        <ul>
         { this.state.todos.map( (todo, index) =>
+<<<<<<< HEAD
           <ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ () => this.toggleComplete(index) } />
         )}
        </ul>
@@ -46,6 +54,11 @@ class App extends Component {
            <input type="text" value={ this.state.newTodoDescription } onChange={ (e) => this.handleChange(e) } />
            <input type="submit" />
        </form>
+=======
+          <ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } />
+        )}
+       </ul>
+>>>>>>> checkpoint-8-propsnstate
       </div>
     );
   }
