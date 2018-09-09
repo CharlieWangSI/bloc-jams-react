@@ -51,8 +51,8 @@ class App extends Component {
        <form onSubmit={ (e) => this.handleSubmit(e) }>
            <input type="text" value={ this.state.newTodoDescription } onChange={ (e) => this.handleChange(e) } />
            <input type="submit" />
-           <input type="button" value="Delete" onChange={(e) => this.handleDelete(e)}>
-       </form>
+           <input type="button" value="Delete" onChange={(e) => this.handleDelete(e)}/>
+      </form>
       </div>
     );
   }
