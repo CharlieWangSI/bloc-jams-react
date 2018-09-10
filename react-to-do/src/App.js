@@ -27,6 +27,12 @@ class App extends Component {
      this.setState({ todos: [...this.state.todos, newTodo], newTodoDescription: '' });
    }
 
+   handleDelete(index) {
+      const todos = this.state.todos.slice();
+      const todoLeft = todos.filter(todos => todos[index]);
+      this.setState({ todos: todoLeft});
+    }
+
   toggleComplete(index) {
     const todos = this.state.todos.slice();
     const todo = todos[index];
@@ -47,18 +53,26 @@ class App extends Component {
        <ul>
         { this.state.todos.map( (todo, index) =>
 <<<<<<< HEAD
+<<<<<<< HEAD
           <ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ () => this.toggleComplete(index) } />
+=======
+          <ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ () => this.toggleComplete(index)} deleteStatus={() => this.handleDelete(index)} />
+>>>>>>> jams-checkpoint-1-config
         )}
        </ul>
        <form onSubmit={ (e) => this.handleSubmit(e) }>
            <input type="text" value={ this.state.newTodoDescription } onChange={ (e) => this.handleChange(e) } />
            <input type="submit" />
+<<<<<<< HEAD
        </form>
 =======
           <ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } />
         )}
        </ul>
 >>>>>>> checkpoint-8-propsnstate
+=======
+      </form>
+>>>>>>> jams-checkpoint-1-config
       </div>
     );
   }
