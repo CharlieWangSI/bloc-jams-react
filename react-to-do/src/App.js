@@ -10,7 +10,6 @@ class App extends Component {
         { description: 'Walk the cat', isCompleted: true },
         { description: 'Throw the dishes away', isCompleted: false },
         { description: 'Buy new dishes', isCompleted: false }
-<<<<<<< HEAD
       ],
         newTodoDescription: ''
     };
@@ -29,7 +28,7 @@ class App extends Component {
 
    handleDelete(index) {
       const todos = this.state.todos.slice();
-      const todoLeft = todos.filter(todos => todos[index]);
+      const todoLeft = todos.filter(todos => todos[index].isCompleted);
       this.setState({ todos: todoLeft});
     }
 
@@ -40,39 +39,19 @@ class App extends Component {
     this.setState({ todos: todos });
   }
 
-=======
-      ]
-    };
-  }
-
->>>>>>> checkpoint-8-propsnstate
 
   render() {
     return (
       <div className="App">
        <ul>
         { this.state.todos.map( (todo, index) =>
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ () => this.toggleComplete(index) } />
-=======
-          <ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ () => this.toggleComplete(index)} deleteStatus={() => this.handleDelete(index)} />
->>>>>>> jams-checkpoint-1-config
+          <ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ () => this.toggleComplete(index)} handleDelete={() => this.handleDelete(index)} />
         )}
        </ul>
        <form onSubmit={ (e) => this.handleSubmit(e) }>
            <input type="text" value={ this.state.newTodoDescription } onChange={ (e) => this.handleChange(e) } />
            <input type="submit" />
-<<<<<<< HEAD
-       </form>
-=======
-          <ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } />
-        )}
-       </ul>
->>>>>>> checkpoint-8-propsnstate
-=======
       </form>
->>>>>>> jams-checkpoint-1-config
       </div>
     );
   }
